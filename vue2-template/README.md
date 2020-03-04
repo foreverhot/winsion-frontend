@@ -1,4 +1,4 @@
-# news-template
+# vue2-template
 
 ## Project setup
 ```
