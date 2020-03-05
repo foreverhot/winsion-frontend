@@ -5,40 +5,40 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-  <% if (modules.includes(jest)) { %>
+  <% if (modules.includes('jest')) { %>
     "test:unit": "vue-cli-service test:unit",
   <% } %>
-  <% if (modules.includes(eslint)) { %>
+  <% if (modules.includes('eslint')) { %>
     "lint": "vue-cli-service lint",
   <% } %>
   },
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-  <% if (modules.includes(router)) { %>
+  <% if (modules.includes('router')) { %>
     "vue-router": "^3.1.5",
   <% } %>
-  <% if (modules.includes(vuex)) { %>
+  <% if (modules.includes('vuex')) { %>
     "vuex": "^3.1.2",
   <% } %>
   },
   "devDependencies": {
     "@vue/cli-service": "~4.2.0",
     "vue-template-compiler": "^2.6.11",
-  <% if (modules.includes(babel)) { %>
+  <% if (modules.includes('babel')) { %>
     "@vue/cli-plugin-babel": "~4.2.0",
   <% } %>
-  <% if (modules.includes(router)) { %>
+  <% if (modules.includes('router')) { %>
     "@vue/cli-plugin-router": "~4.2.0",
   <% } %>
-  <% if (modules.includes(vuex)) { %>
+  <% if (modules.includes('vuex')) { %>
     "@vue/cli-plugin-vuex": "~4.2.0",
   <% } %>
-  <% if (modules.includes(sass)) { %>
+  <% if (modules.includes('sass')) { %>
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
   <% } %>
-  <% if (modules.includes(eslint)) { %>
+  <% if (modules.includes('eslint')) { %>
     "@vue/cli-plugin-eslint": "~4.2.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.0.3",
@@ -47,7 +47,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "prettier": "^1.19.1",
   <% } %>
-  <% if (modules.includes(jest)) { %>
+  <% if (modules.includes('jest')) { %>
     "@vue/cli-plugin-unit-jest": "~4.2.0",
     "@vue/test-utils": "1.0.0-beta.31",
   <% } %>
