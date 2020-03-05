@@ -1,16 +1,16 @@
 {
-  "name": <%= projectName %>,
+  "name": "<%= projectName %>",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-  <% if (modules.includes('jest')) { %>
+  <% if (modules.includes('jest')) { -%>
     "test:unit": "vue-cli-service test:unit",
-  <% } %>
-  <% if (modules.includes('eslint')) { %>
+  <% } -%>
+  <% if (modules.includes('eslint')) { _%>
     "lint": "vue-cli-service lint",
-  <% } %>
+  <% } _%>
   },
   "dependencies": {
     "core-js": "^3.6.4",
