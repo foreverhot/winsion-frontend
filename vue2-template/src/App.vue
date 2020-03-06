@@ -5,24 +5,26 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view/>
+    <router-view />
   <%_ } else { -%>
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   <%_ } -%>
-    
   </div>
 </template>
 
 <script>
+<%_ if (modules.includes('router')) { -%>
+export default {
+  name: 'App'
+}
+<%_ } else { -%>
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
+<%_ } -%>
 </script>
 
 <%_ if (modules.includes('sass')) { -%>
