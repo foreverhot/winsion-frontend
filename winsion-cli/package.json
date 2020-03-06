@@ -1,0 +1,33 @@
+{
+  "name": "winsion-cli",
+  "version": "1.0.0",
+  "description": "用于快速创建一个Vue或者Electron项目",
+  "bin": {
+    "winsion": "bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuejs/vue-cli.git"
+  },
+  "keywords": [
+    "winsion",
+    "cli"
+  ],
+  "author": "Jsoning",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuejs/vue-cli/issues"
+  },
+  "homepage": "https://cli.vuejs.org/",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.1.1",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.0.1",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.0.5",
+    "minimist": "^1.2.0",
+    "ora": "^4.0.3",
+    "validate-npm-package-name": "^3.0.0"
+  }
+}
