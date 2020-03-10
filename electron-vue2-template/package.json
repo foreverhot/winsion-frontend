@@ -1,23 +1,26 @@
 {
-  "name": "electron-vue2-template",
+  "name": "<%= projectName %>",
   "version": "0.0.1",
   "author": "winsion",
-  "description": "An electron-vue project",
+  "description": "",
   "license": "",
   "main": "./dist/electron/main.js",
   "scripts": {
+    "serve": "node .electron-vue/dev-runner.js",
     "build": "node .electron-vue/build.js && electron-builder",
     "build:dir": "node .electron-vue/build.js && electron-builder --dir",
     "build:clean": "cross-env BUILD_TARGET=clean node .electron-vue/build.js",
     "build:web": "cross-env BUILD_TARGET=web node .electron-vue/build.js",
-    "dev": "node .electron-vue/dev-runner.js",
+  <%_ if (modules.includes('eslint')) { -%>
+    "lint": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter src",
+    "lint:fix": "eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter --fix src",
+  <%_ } -%>
     "pack": "npm run pack:main && npm run pack:renderer",
     "pack:main": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.main.config.js",
-    "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js",
-    "postinstall": ""
+    "pack:renderer": "cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.renderer.config.js"
   },
   "build": {
-    "productName": "electron-vue2-template",
+    "productName": "<%= projectName %>",
     "appId": "com.example.yourapp",
     "directories": {
       "output": "build"
@@ -51,6 +54,14 @@
     }
   },
   "dependencies": {
+  <%_ if (modules.includes('router')) { -%>
+    "vue-router": "^3.0.1",
+  <%_ } -%>
+  <%_ if (modules.includes('vuex')) { -%>
+    "vuex": "^3.0.1",
+    "vuex-electron": "^1.0.0",
+  <%_ } -%>
+    "vue-electron": "^1.0.6",
     "vue": "^2.5.16"
   },
   "devDependencies": {
@@ -73,6 +84,13 @@
     "electron-debug": "^1.5.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-builder": "^20.19.2",
+  <%_ if (modules.includes('eslint')) { -%>
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.0.0",
+    "eslint-plugin-html": "^4.0.3",
+  <%_ } -%>
     "mini-css-extract-plugin": "0.4.0",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
@@ -81,6 +99,10 @@
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
     "vue-html-loader": "^1.2.4",
+  <%_ if (modules.includes('sass')) { -%>
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+  <%_ } -%>
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
