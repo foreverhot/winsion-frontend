@@ -13,15 +13,15 @@ module.exports  = (name, initOptions) => {
     let projectRootPath = path.resolve(cwd, name)
     let projectName = isCurrentFolder ? path.relative('../', cwd) : name
     // 测试
-    require('./configTemplate-electron')({
-        projectRootPath,
-        answers:{
-            projectName: 'name3',
-            framework: 'electron',
-            modules: ['router', 'vuex', 'sass', 'eslint']
-        }
-    })
-    return
+    // require('./configTemplate-electron')({
+    //     projectRootPath,
+    //     answers:{
+    //         projectName: 'name3',
+    //         framework: 'electron',
+    //         modules: ['router', 'vuex', 'sass', 'eslint']
+    //     }
+    // })
+    // return
     
     let promptList = [
         {

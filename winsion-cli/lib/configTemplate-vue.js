@@ -2,8 +2,8 @@
  * 数据类型
  * {
     projectName: 'name',
-    framework: 'electron',
-    modules: [ 'router', 'vuex', 'sass', 'eslint', 'jest' ]      
+    framework: 'vue',
+    modules: [ 'babel', 'router', 'vuex', 'sass', 'eslint', 'jest' ]      
     }
  */
 const fs = require('fs-extra')
@@ -56,7 +56,7 @@ module.exports = ({ projectRootPath, answers } = args) => {
    function ipInstall() {
       let font = fs.readFileSync(path.resolve(__dirname, './font.txt'))
       console.log()
-      console.log(chalk.green(font))
+      console.log(chalk.yellow(font))
       console.log()
       console.log(chalk.bgYellow(chalk.black('  欢迎使用winson-cli  ')))
       console.log()

@@ -3,7 +3,7 @@
  * {
     projectName: 'name',
     framework: 'electron',
-    modules: [ 'babel', 'router', 'vuex', 'sass', 'eslint', 'jest' ]      
+    modules: ['router', 'vuex', 'sass', 'eslint' ]      
     }
  */
 const fs = require('fs-extra')
@@ -16,6 +16,7 @@ module.exports = ({ projectRootPath, answers } = args) => {
    const createFiles = require('./createFiles')
    const readmeURL = path.resolve(projectRootPath, './README.md')
    const packageURL = path.resolve(projectRootPath, './package.json')
+   const wbRenderConfigURL = path.resolve(projectRootPath, './.electron-vue/webpack.renderer.config.js')
    const rendererMainURL = path.resolve(projectRootPath, './src/renderer/main.js')
    const rendererAppURL = path.resolve(projectRootPath, './src/renderer/App.vue')
 
@@ -30,6 +31,11 @@ module.exports = ({ projectRootPath, answers } = args) => {
       const packageCtx = fs.readFileSync(packageURL).toString()
       let packageNews = ejs.render(packageCtx, answers)
       fs.writeFileSync(packageURL, packageNews, 'utf8')
+
+      // 配置webpack.renderer.config.js
+      const wbRenderConfigCtx = fs.readFileSync(wbRenderConfigURL).toString()
+      let wbRenderConfigNews = ejs.render(wbRenderConfigCtx, answers)
+      fs.writeFileSync(wbRenderConfigURL, wbRenderConfigNews, 'utf8')
       
       // 配置renderer/main.js
       const mianCtx = fs.readFileSync(rendererMainURL).toString()
@@ -57,7 +63,7 @@ module.exports = ({ projectRootPath, answers } = args) => {
    function ipInstall() {
       let font = fs.readFileSync(path.resolve(__dirname, './font.txt'))
       console.log()
-      console.log(chalk.green(font))
+      console.log(chalk.yellow(font))
       console.log()
       console.log(chalk.bgYellow(chalk.black('  欢迎使用winson-cli  ')))
       console.log()

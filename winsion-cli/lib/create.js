@@ -4,8 +4,8 @@ const chalk = require('chalk')
 const { validateProjectName } = require('./untils')
 
 function create(name, options) {
-    require('./prompt')(name, options)
-    return
+    // require('./prompt')(name, options)
+    // return
     const cwd = process.cwd() //node执行环境的当前路径
     const isCurrentFolder = name === '.'
     const projectName = isCurrentFolder ? path.relative('../', cwd) : name
