@@ -31,6 +31,7 @@ let rendererConfig = {
   ],
   module: {
     rules: [
+    <%_ if (modules.includes('eslint')) { -%>
       {
         test: /\.(js|vue)$/,
         enforce: 'pre',
@@ -42,6 +43,7 @@ let rendererConfig = {
           }
         }
       },
+    <%_ } -%>
       {
         test: /\.less$/,
         use: ['vue-style-loader', 'css-loader', 'less-loader']
