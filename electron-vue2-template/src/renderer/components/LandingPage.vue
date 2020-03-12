@@ -37,7 +37,9 @@
     components: { SystemInformation },
     methods: {
       open (link) {
-        require('electron').shell.openExternal(link)
+        if (!process.env.IS_WEB) {
+          require('electron').shell.openExternal(link)
+        }
       }
     }
   }
