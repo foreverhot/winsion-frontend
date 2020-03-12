@@ -44,10 +44,12 @@ let rendererConfig = {
         }
       },
     <%_ } -%>
+    <%_ if (modules.includes('sass')) { -%>
       {
-        test: /\.less$/,
-        use: ['vue-style-loader', 'css-loader', 'less-loader']
+        test: /\.scss$/,
+        use: ['vue-style-loader', 'css-loader', 'sass-loader']
       },
+    <%_ } -%>
       {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
