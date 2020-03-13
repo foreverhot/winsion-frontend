@@ -2,7 +2,7 @@
 **用于快速构建vue或electron项目**
 
 ## 使用
-1. `nppm install -g winsion-cli`
+1. `npm install -g winsion-cli`
 2. `winsion create <projet-name>`
 3. 选择模板以及所需功能
 4. `npm run serve`
