@@ -1,6 +1,6 @@
 {
   "name": "winsion-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "用于快速创建一个Vue或者Electron项目",
   "bin": {
     "winsion": "bin/index.js"
