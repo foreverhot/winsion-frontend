@@ -15,17 +15,17 @@
 </template>
 
 <script>
-<%_ if (modules.includes('router')) { -%>
-export default {
-  name: 'App'
-}
-<%_ } else { -%>
-import HelloWorld from './components/HelloWorld.vue'
+  <%_ if (modules.includes('router')) { -%>
+  export default {
+    name: 'App'
+  }
+  <%_ } else { -%>
+  import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App'
-}
-<%_ } -%>
+  export default {
+    name: 'App'
+  }
+  <%_ } -%>
 </script>
 
 <%_ if (modules.includes('sass')) { -%>
@@ -33,42 +33,42 @@ export default {
 <%_ } else { -%>
 <style>
 <%_ } -%>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 
 <%_ if (modules.includes('router')) { -%>
   <%_ if (modules.includes('sass')) { -%>
-#nav {
-  padding: 30px;
+  #nav {
+    padding: 30px;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+    a {
+      font-weight: bold;
+      color: #2c3e50;
 
-    &.router-link-exact-active {
-      color: #42b983;
+      &.router-link-exact-active {
+        color: #42b983;
+      }
     }
   }
-}
   <%_ } else { -%>
-#nav {
-  padding: 30px;
-}
+  #nav {
+    padding: 30px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  #nav a {
+    font-weight: bold;
+    color: #2c3e50;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #nav a.router-link-exact-active {
+    color: #42b983;
+  }
   <%_ } -%>
 <%_ } -%>
 </style>
