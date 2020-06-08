@@ -53,6 +53,18 @@
       "icon": "build/icons"
     }
   },
+  <%_ if (modules.includes('eslint')) { -%>
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "npm run lint:fix"
+    ]
+  },
+  <%_ } -%>
   "dependencies": {
   <%_ if (modules.includes('router')) { -%>
     "vue-router": "^3.0.1",
@@ -86,6 +98,8 @@
     "electron-devtools-installer": "^2.2.4",
     "electron-builder": "^20.19.2",
   <%_ if (modules.includes('eslint')) { -%>
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.9",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.11.0",
