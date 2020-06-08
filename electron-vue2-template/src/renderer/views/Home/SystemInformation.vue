@@ -24,7 +24,7 @@
 
 <script>
   export default {
-    data () {
+    data() {
       return {
         electron: process.versions.electron,
         node: process.versions.node,
@@ -40,11 +40,13 @@
     color: #888;
     font-size: 18px;
     font-weight: initial;
-    letter-spacing: .25px;
+    letter-spacing: 0.25px;
     margin-top: 10px;
   }
 
-  .items { margin-top: 8px; }
+  .items {
+    margin-top: 8px;
+  }
 
   .item {
     display: flex;
