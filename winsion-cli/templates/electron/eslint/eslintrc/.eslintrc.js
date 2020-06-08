@@ -11,8 +11,7 @@ module.exports = {
   },
   extends: ['standard', 'prettier'],
   globals: {
-    __static: true,
-    __complete: true
+    __static: true
   },
   plugins: ['html', 'prettier'],
   rules: {
