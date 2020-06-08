@@ -11,6 +11,7 @@ const path = require('path')
 const chalk = require('chalk')
 const ora = require('ora')
 const ejs = require('ejs')
+const child_process = require('child_process')
 
 module.exports = ({ projectRootPath, answers } = args) => {
    const createFiles = require('./createFiles')
@@ -61,6 +62,7 @@ module.exports = ({ projectRootPath, answers } = args) => {
    setFileLoad.stop()
 
    function ipInstall() {
+      child_process.exec("git init", { cwd: projectRootPath })
       let font = fs.readFileSync(path.resolve(__dirname, './font.txt'))
       console.log()
       console.log(chalk.yellow(font))
