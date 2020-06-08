@@ -66,11 +66,11 @@ module.exports = (projectRootPath) => {
                 {
                     "sourcePath": path.resolve(__dirname, `${electronFileBase}/eslint/eslintrc`),
                     "targetPath": projectRootPath 
+                },
+                {
+                    "sourcePath": path.resolve(__dirname, `${electronFileBase}/eslint/prettierrc`),
+                    "targetPath": projectRootPath 
                 }
-                // {
-                //     "sourcePath": path.resolve(__dirname, `${electronFileBase}/eslint/prettierrc`),
-                //     "targetPath": projectRootPath 
-                // }
             ]
         }
     }
